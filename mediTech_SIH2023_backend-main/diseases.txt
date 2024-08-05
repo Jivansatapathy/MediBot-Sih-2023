@@ -1,0 +1,71 @@
+Dengue {
+    Fatigue
+    Vomiting
+    Headache
+    Fever
+    Low Blood Pressure
+}
+
+Malaria {
+    Sweating
+    Fever
+    Vomiting
+    Diaherrea
+    Stomachache
+}
+
+Food Poisoning {
+    Diaherrea
+    Fever
+    Vomiting
+    Headache
+    Stomachache
+}
+
+Flu {
+    Fever
+    Fatigue
+    Headache
+    Bodyache
+    Cough
+}
+
+Hepatitis B {
+    Fever
+    Fatigue
+    Vomiting
+    Stomachache
+    Dark Urine
+}
+
+Thyroid {
+    Anxiety
+    Fatigue
+    Hand Tremor
+    Hair Loss
+    Sleep Problems
+}
+
+Measles {
+    Fever
+    Cough
+    Conjunctivitis
+    Skin Rash
+    Sore Throat
+}
+
+Plague {
+    Fever
+    Stomachache
+    Fatigue
+    Bleeding
+
+}
+
+Kidney Disease {
+    Vomiting
+    Sleep Problems
+    Itchy Skin
+    Loss of appetite
+    Muscle Cramps
+}

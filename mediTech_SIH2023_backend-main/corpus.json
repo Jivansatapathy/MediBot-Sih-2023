@@ -1,0 +1,93 @@
+{
+    "name": "Name of the corpus",
+    "locale": "en-US",
+    "data": [
+      {
+        "intent": "symptom",
+        "utterances": [
+          "I am feeling @symptom",
+          "I am having @symptom",
+          "I have @symptom",
+          "I feel @symptom",
+          "@yesno, I am feeling @symptom",
+          "@yesno, I am having @symptom",
+          "@yesno, I have @symptom",
+          "@yesno, I feel @symptom"
+        ],
+        "answers": [
+          "Please tell me if you are having any other problems as well."
+        ]
+      },
+      {
+        "intent": "introduction",
+        "utterances": [
+          "@name",
+          "I am @name",
+          "My name is @name"
+        ],
+        "answers": [
+          "Hi {{ name }}, what is your problem?"
+        ]
+      },
+      {
+        "intent": "affirm",
+        "utterances": [
+          "@yesno"
+        ],
+        "answers": [
+          "Then please tell me about it."
+        ]
+      },
+      {
+        "intent": "connect.doctor",
+        "utterances": [
+          "Connect me to a doctor",
+          "Can you connect me to a doctor",
+          "Please contact the doctor",
+          "I want to meet with a doctor",
+          "I need professional help"
+        ],
+        "answers": [
+          "Sure, here is the link to E-Sanjeevani where you can connect to a doctor online: <a href='https://esanjeevani.mohfw.gov.in/'>E-Sanjeevani</a>"
+        ]
+      }
+    ],
+    "entities": {
+      "name": {
+        "trim": [
+          {
+            "position": "afterLast",
+            "words": ["I am", "My name is"],
+            "opts": {
+              "skip": ["having", "feeling"]
+            }
+          }
+        ]
+      },
+      "symptom": {
+        "trim": [
+          {
+            "position": "between",
+            "leftWords": ["feeling", "having", "have", "feel", ","],
+            "rightWords": [",", "and"]
+          },
+          {
+            "position": "afterLast",
+            "words": ["feeling", "having", "have", "feel", ",", "and"]
+          }
+        ],
+        "options": {
+          "fatigue": ["fatigue", "weakness", "tired", "weak"],
+          "fever": ["fever", "hot", "high temperature", "cold"],
+          "headache": ["headache", "head pain", "pain in head", "head"],
+          "stomachache": ["stomachache", "stomach pain", "upset stomach", "pain in stomach", "stomach"]
+        }
+      },
+      "yesno": {
+        "options": {
+          "yes": ["yes", "y", "yeah", "yup", "both"],
+          "no": ["no", "n", "nah", "not at all"]
+        }
+      }
+    }
+  }
